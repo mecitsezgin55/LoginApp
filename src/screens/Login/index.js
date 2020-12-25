@@ -67,6 +67,22 @@ const Login = () => {
                     onFocus={() => setFocusedInput(0)}
                 />
             </TouchableOpacity>
+
+            <TouchableOpacity
+                style={[myStyle.inputContainer,  focusedInput === 1 && { borderColor: '#1DA1F2' }]}
+                onPress={() => input1Ref.focus()}
+                activeOpacity={1}
+                >
+                <Text style={myStyle.text1Style}>Şifre</Text>
+
+                <TextInput 
+                    ref={d => {input1Ref = d}}
+                    style={{padding: 0, marginVertical:6}}
+                    onFocus={() => setFocusedInput(1)}
+                    secureTextEntry={!passwordShown}
+                    returnKeyType={'done'}
+                />
+            </TouchableOpacity>
         </View>
     );
 }
